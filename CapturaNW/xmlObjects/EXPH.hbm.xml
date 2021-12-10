@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="CapturaNW"
+					namespace="CapturaNW.Modelagem">
+
+	<class name="EXPH" table="EXPH">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Codigo" />
+    <property name="Usina" />
+    <property name="Enchimento" />
+    <property name="Duracao" />
+    <property name="Volume" />
+    <property name="Entrada" />
+    <property name="Pot" />
+    <property name="Maquina" />
+    <property name="Conjunto" />
+    <property name="Ordena" />
+    <many-to-one name="deckNW" class="CapturaNW.Modelagem.DeckNW" column="ID_DECK" foreign-key="FK_DECK_EXPH"  />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemPrevs">
+
+  <class name="Prevs">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="dt_entrada" update="false" insert="false" />
+    <property name="rev" />
+    <property name="caminho" />
+    <property name="ano" />
+    <property name="mes" />
+    <property name="oficial" />
+    
+    <bag name="dados" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_prevs" foreign-key="FK_PrevsDados_Prevs1" />
+      <one-to-many class="PrevsDados" />
+    </bag>
+
+    
+    <bag name="estudo_dependentes" lazy="true" >
+      <key column="id_prevs_base" foreign-key="FK_Estudos_Prevs" />
+      <one-to-many class="Estudos" />
+    </bag>
+    <bag name="estudo_gerador" lazy="true" >
+      <key column="id_prevs_saida" foreign-key="FK_Estudos_Prevs1" />
+      <one-to-many class="Estudos" />
+    </bag>    
+  </class>
+</hibernate-mapping>

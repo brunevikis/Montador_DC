@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="AutoPrevs"
+					namespace="AutoPrevs.Modelagem">
+
+  <class name="RDH" table="fat_rdh_carga">
+    <id name="dt_rdh" />
+    <bag name="dados" cascade="all-delete-orphan" lazy="false" >
+      <key column="dt_rdh" />
+      <one-to-many class="RDHDados" />
+    </bag>
+  </class>
+</hibernate-mapping>

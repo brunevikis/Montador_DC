@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="ComparadorDecksDC"
+					namespace="ComparadorDecksDC.Modelagem">
+
+  <class name="Semanas" table="semanas_operativas">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="mes" />
+    <property name="ano" />
+    <property name="semanas" />
+    <property name="primeiraSemana" column="p_semana" />
+    <property name="diasMes2" column="dias_mes2" />
+  </class>
+</hibernate-mapping>

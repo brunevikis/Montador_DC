@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="CapturaNW"
+					namespace="CapturaNW.Modelagem">
+
+	<class name="DeckNW" table="DECKS">
+		<id name="id" column="id" >
+			<generator class="native" />
+		</id>
+    <property name="dt_Entrada" column="DATA_INSERCAO" update="false" insert="false" />
+    <property name="nome" column="NOME" />
+    <property name="descricao" column="DESCRICAO" />
+    <property name="ano" column="ANO"/>
+    <property name="mes" column="MES"/>
+    <property name="oficial" column="OFICIAL"/>
+
+    <bag name="c_adic" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_C_ADIC" />
+      <one-to-many class="C_ADIC" />
+    </bag>
+
+    <bag name="clast_1" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_CLAST_1" />
+      <one-to-many class="CLAST_1" />
+    </bag>
+
+    <bag name="clast_2" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_CLAST_2" />
+      <one-to-many class="CLAST_2" />
+    </bag>
+    
+    <bag name="custo_def" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_CUSTO_DEF" />
+      <one-to-many class="CUSTO_DEF" />
+    </bag>
+
+    <bag name="desvagua" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_DESVAGUA" />
+      <one-to-many class="DESVAGUA" />
+    </bag>
+
+    <bag name="dger" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_DGER" />
+      <one-to-many class="DGER" />
+    </bag>
+
+    <bag name="eafpast" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_EAFPAST" />
+      <one-to-many class="EAFPAST" />
+    </bag>
+
+    <bag name="exph" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_EXPH" />
+      <one-to-many class="EXPH" />
+    </bag>
+
+    <bag name="expt" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_EXPT" />
+      <one-to-many class="EXPT" />
+    </bag>
+    
+    <bag name="intercambio" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_INTERCAMBIO" />
+      <one-to-many class="INTERCAMBIO" />
+    </bag>
+    
+    <bag name="manutt" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_MANUTT" />
+      <one-to-many class="MANUTT" />
+    </bag>
+    
+    <bag name="mercado" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_MERCADO" />
+      <one-to-many class="MERCADO" />
+    </bag>
+    
+    <bag name="pequenas" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_PEQUENAS" />
+      <one-to-many class="PEQUENAS" />
+    </bag>
+    
+    <bag name="term" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_TERM" />
+      <one-to-many class="TERM" />
+    </bag>
+
+    <bag name="conft" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_CONFT" />
+      <one-to-many class="CONFT" />
+    </bag>
+
+    <bag name="pat_carga" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_Deck_Pat_Carga" />
+      <one-to-many class="PAT_CARGA" />
+    </bag>
+
+    <bag name="pat_intercambio" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECKS_PAT_INTERCAMBIO" />
+      <one-to-many class="PAT_INTERCAMBIO" />
+    </bag>
+    
+    <bag name="modif" cascade="all-delete-orphan" lazy="false" >
+      <key column="ID_DECK"  foreign-key="FK_DECK_MODIF" />
+      <one-to-many class="MODIF" />
+    </bag>
+    
+  </class>
+</hibernate-mapping>

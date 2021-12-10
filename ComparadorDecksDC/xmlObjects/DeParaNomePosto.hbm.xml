@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="ComparadorDecksDC"
+					namespace="ComparadorDecksDC.Modelagem">
+
+  <class name="DeParaNomePosto" >
+    <id name="Id" column="Id" >
+			<generator class="native" />
+		</id>
+    <property name="DataAtualizacao" />
+    <property name="De" />
+    <property name="Para" />
+  </class>
+</hibernate-mapping>

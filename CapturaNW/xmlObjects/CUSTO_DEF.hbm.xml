@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="CapturaNW"
+					namespace="CapturaNW.Modelagem">
+
+	<class name="CUSTO_DEF" table="CUSTO_DEF">
+    <id name="id" column="id" >
+			<generator class="native" />
+		</id>
+    <property name="NUM" />
+    <property name="NOME_SSIS" />
+    <property name="FORA" />
+    <property name="PAT1" />
+    <property name="PAT2" />
+    <property name="PAT3" />
+    <property name="PAT4" />
+    <property name="PU1" />
+    <property name="PU2" />
+    <property name="PU3" />
+    <property name="PU4" />
+    <many-to-one name="deckNW" class="CapturaNW.Modelagem.DeckNW" column="ID_DECK" foreign-key="FK_DECK_CUSTO_DEF"  />
+
+  </class>
+</hibernate-mapping>

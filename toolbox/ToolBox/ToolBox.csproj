@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7924518D-2C02-499A-8492-2B28D0DCE402}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ToolBox</RootNamespace>
+    <AssemblyName>ToolBox</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UAT|x86' ">
+    <OutputPath>bin\x86\Realease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Componentes\DataGridViewDecks.resx">
+      <DependentUpon>DataGridViewDecks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\SelectFileTextBox.resx">
+      <DependentUpon>SelectFileTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormBasic.resx">
+      <DependentUpon>FormBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\SelectFolderTextBox.resx">
+      <DependentUpon>SelectFolderTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ambiente.cs" />
+    <Compile Include="BindingList.cs" />
+    <Compile Include="EnumerableDataReader.cs" />
+    <Compile Include="Componentes\DataGridViewDecks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\SelectFileTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\SelectFileTextBox.designer.cs">
+      <DependentUpon>SelectFileTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridViewAutoFilterColumnHeaderCell.cs" />
+    <Compile Include="DataGridViewAutoFilterTextBoxColumn.cs" />
+    <Compile Include="DeckSource.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Extensions\ExcelExtension.cs" />
+    <Compile Include="Forms\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormBasic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBasic.Designer.cs">
+      <DependentUpon>FormBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DataGridViewHelper.cs" />
+    <Compile Include="IniFileHandling\IniFile.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\SelectFolderTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Componentes\SelectFolderTextBox.designer.cs">
+      <DependentUpon>SelectFolderTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IniFileHandling\RunInfo.cs" />
+    <Compile Include="Strings\StringManipulator.cs" />
+    <Compile Include="Strings\StringNavigator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MicrosoftOfficeCore.15.0.0\lib\net35\Office.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Messages.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\computerp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\offp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\okp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\onp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\talkp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\userp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\computerp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\nop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\offp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\okp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\onp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\talkp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\topic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\ajax-loader.gif" />
+    <Content Include="images\energy.ico" />
+    <Content Include="images\error.png" />
+    <Content Include="images\folderarrow.png" />
+    <Content Include="images\lightning.ico" />
+    <Content Include="images\searchfile.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

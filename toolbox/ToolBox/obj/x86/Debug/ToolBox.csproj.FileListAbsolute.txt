@@ -1,0 +1,45 @@
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\bin\Debug\ToolBox.dll
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\bin\Debug\ToolBox.pdb
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.dll
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.pdb
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.Componentes.BarraStatus.resources
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.Componentes.SelectFolderTextBox.resources
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\bin\Debug\mysql.data.dll
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\bin\Debug\mysql.data.entity.dll
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.Resource1.resources
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.dll.licenses
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\bin\Debug\pdftotext.exe
+C:\Users\paulo.amaral\Documents\Visual Studio 2010\Projects\ToolBox\ToolBox\obj\x86\Debug\ToolBox.Forms.FormAbout.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\bin\Debug\pdftotext.exe
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\bin\Debug\ToolBox.dll
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\bin\Debug\ToolBox.pdb
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\bin\Debug\mysql.data.dll
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\bin\Debug\mysql.data.entity.dll
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.BarraStatus.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.SelectFileTextBox.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.Forms.FormAbout.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.Resource1.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.SelectFolderTextBox.resources
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.csproj.GenerateResource.Cache
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.dll.licenses
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.dll
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.pdb
+H:\TI - Desenvolvimento\Desenvolvimento\toolbox\ToolBox\obj\x86\Debug\ToolBox.csprojResolveAssemblyReference.cache
+C:\Development\montador_dc\toolbox\ToolBox\bin\Debug\ToolBox.dll
+C:\Development\montador_dc\toolbox\ToolBox\bin\Debug\ToolBox.pdb
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.DataGridViewDecks.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.SelectFileTextBox.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Forms.FormAbout.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Forms.FormBasic.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Properties.Resources.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Resource1.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.Componentes.SelectFolderTextBox.resources
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.csproj.GenerateResource.cache
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.dll.licenses
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.csproj.CoreCompileInputs.cache
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.dll
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.pdb
+C:\Development\montador_dc\toolbox\ToolBox\obj\x86\Debug\ToolBox.csprojAssemblyReference.cache

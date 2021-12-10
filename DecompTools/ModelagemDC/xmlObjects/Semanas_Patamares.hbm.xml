@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemDC">
+
+  <class name="Semanas_Patamares" table="semanas_patamares">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Semana" />
+    <property name="pesado" />
+    <property name="medio" />
+    <property name="leve" />
+  </class>
+</hibernate-mapping>

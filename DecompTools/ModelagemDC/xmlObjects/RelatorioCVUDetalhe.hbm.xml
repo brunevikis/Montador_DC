@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemDC">
+
+  <class name="RelatorioCVUDetalhe">
+    <id name="Id" >
+      <generator class="native" />
+    </id>
+    <many-to-one name="RelatorioCVU" class="DecompTools.ModelagemDC.RelatorioCVU" column="Id_RelatorioCVU" foreign-key="fk_RelatorioCVU_Detalhes"   />
+
+    <property name="Empreendimento" /> 
+    <property name="Combustivel" /> 
+    <property name="Leilao" />
+    <property name="Produto" />
+    <property name="CVU_PMO" />
+  </class>
+</hibernate-mapping>

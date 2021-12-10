@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="ComparadorDecksDC"
+					namespace="ComparadorDecksDC.Modelagem">
+
+  <class name="RHV" table="rhv">
+    <!-- Parte 'comunitaria' -->
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <many-to-one name="deck" class="ComparadorDecksDC.Modelagem.Deck" column="id_deck" foreign-key="fk_deck_rhv" />
+    <property name="ordem" column="ordem" /> <!-- Linha no deck -->
+    <property name="linha" column="linha" /> <!-- Linha dentro do bloco -->
+    <property name="bloco" column="bloco" /> <!-- Linha para guardar o nome da linha, ja que o bloco de restricao tem varias linhas diferentes (HV, LV, CV) -->
+    <!-- Parte especifica por deck -->
+    <property name="campo1" />
+    <property name="campo2" />
+    <property name="campo3" />
+  </class>
+</hibernate-mapping>

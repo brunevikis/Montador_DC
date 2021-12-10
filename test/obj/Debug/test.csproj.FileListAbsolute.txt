@@ -1,0 +1,13 @@
+C:\Development\montador_dc\test\bin\Debug\test.exe.config
+C:\Development\montador_dc\test\bin\Debug\test.exe
+C:\Development\montador_dc\test\bin\Debug\test.pdb
+C:\Development\montador_dc\test\bin\Debug\DecompTools.exe
+C:\Development\montador_dc\test\bin\Debug\LinuxQueue.dll
+C:\Development\montador_dc\test\bin\Debug\ToolBox.dll
+C:\Development\montador_dc\test\bin\Debug\NHibernate.dll
+C:\Development\montador_dc\test\bin\Debug\Iesi.Collections.dll
+C:\Development\montador_dc\test\bin\Debug\DecompTools.exe.config
+C:\Development\montador_dc\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Development\montador_dc\test\obj\Debug\test.csproj.CopyComplete
+C:\Development\montador_dc\test\obj\Debug\test.exe
+C:\Development\montador_dc\test\obj\Debug\test.pdb

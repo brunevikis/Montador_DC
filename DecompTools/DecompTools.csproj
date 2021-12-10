@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B6C1C07-B11E-4E57-91A1-62A7FD37F0E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DecompTools</RootNamespace>
+    <AssemblyName>DecompTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>H:\TI - Sistemas\PROD\DecompTools\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <PublisherName>Compass</PublisherName>
+    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BBDB594C0A0CF889822086B5E97662E534D88A32</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DecompTools_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>lightning.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="LinuxQueue">
+      <HintPath>H:\TI - Sistemas\PROD\DecompTools\Application Files\DecompTools_1_2_0_8\LinuxQueue.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.7\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.4.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolBox">
+      <HintPath>..\toolbox\ToolBox\bin\Debug\ToolBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControllerDC\controllerAtualizaDados.cs" />
+    <Compile Include="ControllerDC\controllerCarrega.cs" />
+    <Compile Include="ControllerDC\controllerCompara.cs" />
+    <Compile Include="ControllerDC\controllerCVU.cs" />
+    <Compile Include="ControllerDC\controllerDadgnlMensal.cs" />
+    <Compile Include="ControllerDC\controllerDadgnlRV0.cs" />
+    <Compile Include="ControllerDC\controllerDadgnlRVX.cs" />
+    <Compile Include="ControllerDC\controllerEscreve.cs" />
+    <Compile Include="ControllerDC\controllerMultiBlock.cs" />
+    <Compile Include="ControllerDC\controllerReservatorio.cs" />
+    <Compile Include="ControllerDC\controllerRV0.cs" />
+    <Compile Include="ControllerDC\controllerRVX.cs" />
+    <Compile Include="ControllerDC\controllerVazoesC.cs" />
+    <Compile Include="ControllerDC\IController.cs" />
+    <Compile Include="ControllerNW\controllerCarregaNW.cs" />
+    <Compile Include="ControllerPrevs\controllerCarregaPrevs.cs" />
+    <Compile Include="ControllerPrevs\controllerEscrevePrevs.cs" />
+    <Compile Include="ControllerPrevs\controllerNovoPrevs.cs" />
+    <Compile Include="ControllerPrevs\controllerPrevivaz.cs" />
+    <Compile Include="FactoryDC\BlockDAO.cs" />
+    <Compile Include="FactoryDC\CadUshDAO.cs" />
+    <Compile Include="FactoryDC\DeckDAO.cs" />
+    <Compile Include="FactoryDC\DeParaNomePostoDAO.cs" />
+    <Compile Include="FactoryDC\EarmMaxDAO.cs" />
+    <Compile Include="FactoryDC\FeriadoDAO.cs" />
+    <Compile Include="FactoryDC\infoUsinasFictDAO.cs" />
+    <Compile Include="FactoryDC\MltPostoDAO.cs" />
+    <Compile Include="FactoryDC\NHibernateGeralHelper.cs" />
+    <Compile Include="FactoryDC\NHibernateHelper.cs" />
+    <Compile Include="FactoryDC\RelatorioCVUDAO.cs" />
+    <Compile Include="FactoryDC\SemanasDAO.cs" />
+    <Compile Include="FactoryDC\SemanasPatamaresDAO.cs" />
+    <Compile Include="FactoryNW\BlockNWDAO.cs" />
+    <Compile Include="FactoryNW\DeckNWDAO.cs" />
+    <Compile Include="FactoryNW\NHibernateHelper.cs" />
+    <Compile Include="FactoryPrevs\AcomphDAO.cs" />
+    <Compile Include="FactoryPrevs\MLTDAO.cs" />
+    <Compile Include="FactoryPrevs\NHibernateHelper.cs" />
+    <Compile Include="FactoryPrevs\NHibernateHelperRDH.cs" />
+    <Compile Include="FactoryPrevs\PostosDAO.cs" />
+    <Compile Include="FactoryPrevs\PrevsDAO.cs" />
+    <Compile Include="FactoryPrevs\RDHDAO.cs" />
+    <Compile Include="FactoryPrevs\RegressaoDAO.cs" />
+    <Compile Include="FactoryPrevs\SemanasAnoDAO.cs" />
+    <Compile Include="ModelagemDC\AC.cs" />
+    <Compile Include="ModelagemDC\blockModel.cs" />
+    <Compile Include="ModelagemDC\CadUsh.cs" />
+    <Compile Include="ModelagemDC\CD.cs" />
+    <Compile Include="ModelagemDC\CI.cs" />
+    <Compile Include="ModelagemDC\FJ.cs" />
+    <Compile Include="ModelagemDC\FP.cs" />
+    <Compile Include="ModelagemDC\CT.cs" />
+    <Compile Include="ModelagemDC\Dadgnl.cs" />
+    <Compile Include="ModelagemDC\Deck.cs" />
+    <Compile Include="ModelagemDC\DeParaNomePosto.cs" />
+    <Compile Include="ModelagemDC\DP.cs" />
+    <Compile Include="ModelagemDC\EarmMax.cs" />
+    <Compile Include="ModelagemDC\Excecao.cs" />
+    <Compile Include="ModelagemDC\EZ.cs" />
+    <Compile Include="ModelagemDC\FC.cs" />
+    <Compile Include="ModelagemDC\FD.cs" />
+    <Compile Include="ModelagemDC\Feriado.cs" />
+    <Compile Include="ModelagemDC\GP.cs" />
+    <Compile Include="ModelagemDC\IA.cs" />
+    <Compile Include="ModelagemDC\infoUsinasFict.cs" />
+    <Compile Include="ModelagemDC\IT.cs" />
+    <Compile Include="ModelagemDC\Model.cs" />
+    <Compile Include="ModelagemDC\MP.cs" />
+    <Compile Include="ModelagemDC\MT.cs" />
+    <Compile Include="ModelagemDC\NI.cs" />
+    <Compile Include="ModelagemDC\PI.cs" />
+    <Compile Include="ModelagemDC\PQ.cs" />
+    <Compile Include="ModelagemDC\QI.cs" />
+    <Compile Include="ModelagemDC\RelatorioCVU.cs" />
+    <Compile Include="ModelagemDC\RelatorioCVUDetalhe.cs" />
+    <Compile Include="ModelagemDC\Restricoes.cs" />
+    <Compile Include="ModelagemDC\RHA.cs" />
+    <Compile Include="ModelagemDC\RHE.cs" />
+    <Compile Include="ModelagemDC\RHQ.cs" />
+    <Compile Include="ModelagemDC\RHV.cs" />
+    <Compile Include="ModelagemDC\RI.cs" />
+    <Compile Include="ModelagemDC\RQ.cs" />
+    <Compile Include="ModelagemDC\Semanas.cs" />
+    <Compile Include="ModelagemDC\Semanas_Patamares.cs" />
+    <Compile Include="ModelagemDC\TI.cs" />
+    <Compile Include="ModelagemDC\TX.cs" />
+    <Compile Include="ModelagemDC\UE.cs" />
+    <Compile Include="ModelagemDC\UH.cs" />
+    <Compile Include="ModelagemDC\VazoesC.cs" />
+    <Compile Include="ModelagemDC\VE.cs" />
+    <Compile Include="ModelagemDC\VI.cs" />
+    <Compile Include="ModelagemDC\VL.cs" />
+    <Compile Include="ModelagemDC\VR.cs" />
+    <Compile Include="ModelagemDC\VU.cs" />
+    <Compile Include="ModelagemNW\blockModel.cs" />
+    <Compile Include="ModelagemNW\CLAST_1.cs" />
+    <Compile Include="ModelagemNW\CLAST_2.cs" />
+    <Compile Include="ModelagemNW\CONFT.cs" />
+    <Compile Include="ModelagemNW\CUSTO_DEF.cs" />
+    <Compile Include="ModelagemNW\C_ADIC.cs" />
+    <Compile Include="ModelagemNW\DeckNW.cs" />
+    <Compile Include="ModelagemNW\DESVAGUA.cs" />
+    <Compile Include="ModelagemNW\DGER.cs" />
+    <Compile Include="ModelagemNW\EXPH.cs" />
+    <Compile Include="ModelagemNW\EXPT.cs" />
+    <Compile Include="ModelagemNW\INTERCAMBIO.cs" />
+    <Compile Include="ModelagemNW\MANUTT.cs" />
+    <Compile Include="ModelagemNW\MERCADO.cs" />
+    <Compile Include="ModelagemNW\Model.cs" />
+    <Compile Include="ModelagemNW\MODIF.cs" />
+    <Compile Include="ModelagemNW\PAT_CARGA.cs" />
+    <Compile Include="ModelagemNW\PAT_INTERCAMBIO.cs" />
+    <Compile Include="ModelagemNW\PAT_NAO_SIMULADAS.cs" />
+    <Compile Include="ModelagemNW\PEQUENAS.cs" />
+    <Compile Include="ModelagemNW\TERM.cs" />
+    <Compile Include="ModelagemPrevs\Calculados.cs" />
+    <Compile Include="ModelagemPrevs\CalculadosDados.cs" />
+    <Compile Include="ModelagemPrevs\Estudos.cs" />
+    <Compile Include="ModelagemPrevs\MltPosto.cs" />
+    <Compile Include="ModelagemPrevs\MltSub.cs" />
+    <Compile Include="ModelagemPrevs\Model.cs" />
+    <Compile Include="ModelagemPrevs\Postos.cs" />
+    <Compile Include="ModelagemPrevs\Prevs.cs" />
+    <Compile Include="ModelagemPrevs\PrevsDados.cs" />
+    <Compile Include="ModelagemPrevs\RDH.cs" />
+    <Compile Include="ModelagemPrevs\RDHDados.cs" />
+    <Compile Include="ModelagemPrevs\Regressao.cs" />
+    <Compile Include="ModelagemPrevs\RegressaoDados.cs" />
+    <Compile Include="ModelagemPrevs\Semanas_Ano.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\UtilitarioDeArquivo.cs" />
+    <Compile Include="Util\UtilitarioDeData.cs" />
+    <Compile Include="Util\UtilitarioDeTexto.cs" />
+    <Compile Include="Views\DadgnlMensal.cs" />
+    <Compile Include="Views\DadgnlRV0.cs" />
+    <Compile Include="Views\DadgnlRVX.cs" />
+    <Compile Include="Views\FormAtualizaCVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAtualizaCVU.Designer.cs">
+      <DependentUpon>FormAtualizaCVU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAtualizaCVUDeParaNovo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAtualizaCVUDeParaNovo.Designer.cs">
+      <DependentUpon>FormAtualizaCVUDeParaNovo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAtualizaCVUResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAtualizaCVUResultado.Designer.cs">
+      <DependentUpon>FormAtualizaCVUResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAtualizaDados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAtualizaDados.Designer.cs">
+      <DependentUpon>FormAtualizaDados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormCarrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCarrega.Designer.cs">
+      <DependentUpon>FormCarrega.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormCarregaCVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCarregaCVU.Designer.cs">
+      <DependentUpon>FormCarregaCVU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormCarregaPrevs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCarregaPrevs.Designer.cs">
+      <DependentUpon>FormCarregaPrevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormComparar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormComparar.Designer.cs">
+      <DependentUpon>FormComparar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormDadgnlMensal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormDadgnlMensal.Designer.cs">
+      <DependentUpon>FormDadgnlMensal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormDadgnlRV0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormDadgnlRV0.Designer.cs">
+      <DependentUpon>FormDadgnlRV0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormDadgnlRVX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormDadgnlRVX.Designer.cs">
+      <DependentUpon>FormDadgnlRVX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormDPTransformer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormDPTransformer.Designer.cs">
+      <DependentUpon>FormDPTransformer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEscreve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEscreve.Designer.cs">
+      <DependentUpon>FormEscreve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEscrevePrevs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEscrevePrevs.Designer.cs">
+      <DependentUpon>FormEscrevePrevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormCarregaNW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCarregaNW.Designer.cs">
+      <DependentUpon>FormCarregaNW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMultiBlock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMultiBlock.Designer.cs">
+      <DependentUpon>FormMultiBlock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMultiRV0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMultiRV0.Designer.cs">
+      <DependentUpon>FormMultiRV0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormNovoPrevs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormNovoPrevs.Designer.cs">
+      <DependentUpon>FormNovoPrevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormNWSistemaDatNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormNWSistemaDatNew.Designer.cs">
+      <DependentUpon>FormNWSistemaDatNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormReservatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormReservatorio.Designer.cs">
+      <DependentUpon>FormReservatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRV0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRV0.Designer.cs">
+      <DependentUpon>FormRV0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRVX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRVX.Designer.cs">
+      <DependentUpon>FormRVX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormVazoesC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormVazoesC.Designer.cs">
+      <DependentUpon>FormVazoesC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FormAtualizaCVU.resx">
+      <DependentUpon>FormAtualizaCVU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormAtualizaCVUDeParaNovo.resx">
+      <DependentUpon>FormAtualizaCVUDeParaNovo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormAtualizaCVUResultado.resx">
+      <DependentUpon>FormAtualizaCVUResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormAtualizaDados.resx">
+      <DependentUpon>FormAtualizaDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCarrega.resx">
+      <DependentUpon>FormCarrega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCarregaCVU.resx">
+      <DependentUpon>FormCarregaCVU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCarregaPrevs.resx">
+      <DependentUpon>FormCarregaPrevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormComparar.resx">
+      <DependentUpon>FormComparar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormDadgnlMensal.resx">
+      <DependentUpon>FormDadgnlMensal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormDadgnlRV0.resx">
+      <DependentUpon>FormDadgnlRV0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormDadgnlRVX.resx">
+      <DependentUpon>FormDadgnlRVX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormDPTransformer.resx">
+      <DependentUpon>FormDPTransformer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEscreve.resx">
+      <DependentUpon>FormEscreve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEscrevePrevs.resx">
+      <DependentUpon>FormEscrevePrevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormCarregaNW.resx">
+      <DependentUpon>FormCarregaNW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMultiBlock.resx">
+      <DependentUpon>FormMultiBlock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMultiRV0.resx">
+      <DependentUpon>FormMultiRV0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormNovoPrevs.resx">
+      <DependentUpon>FormNovoPrevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormNWSistemaDatNew.resx">
+      <DependentUpon>FormNWSistemaDatNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormReservatorio.resx">
+      <DependentUpon>FormReservatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRV0.resx">
+      <DependentUpon>FormRV0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRVX.resx">
+      <DependentUpon>FormRVX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormVazoesC.resx">
+      <DependentUpon>FormVazoesC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DecompTools_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\AC.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\cadUsh.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\CD.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\CI.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\CT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\Deck.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\DeParaNomePosto.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\DP.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\EZ.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\FC.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\FD.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\Feriado.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\GP.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\IA.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\infoUsinasFict.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\IT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\MP.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\MT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\NI.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\PI.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\PQ.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\QI.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RelatorioCVU.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RelatorioCVUDetalhe.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\reserv_earmMax.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RHA.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RHE.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RHQ.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RHV.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RQ.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\Semanas.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\Semanas_Patamares.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\TI.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\TX.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\UE.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\UH.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\VE.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\VI.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\VR.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\CLAST_1.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\CLAST_2.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\CONFT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\CUSTO_DEF.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\C_ADIC.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\DeckNW.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\DESVAGUA.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\DGER.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\EXPH.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\EXPT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\INTERCAMBIO.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\MANUTT.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\MERCADO.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\MODIF.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\PAT_CARGA.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\PAT_INTERCAMBIO.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\PEQUENAS.hbm.xml" />
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\TERM.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Calculados.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\CalculadosDados.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Estudos.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Mlt_Posto.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Mlt_Sub.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Postos.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Prevs.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\PrevsDados.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\RDH.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\RDHDados.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Regressao.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\RegressaoDados.hbm.xml" />
+    <EmbeddedResource Include="ModelagemPrevs\xmlObjects\Semanas_Ano.hbm.xml" />
+    <Content Include="lightning.ico" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\FP.hbm.xml" />
+    <EmbeddedResource Include="ModelagemDC\xmlObjects\RI.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModelagemNW\xmlObjects\PAT_NAO_SIMULADAS.hbm.xml" />
+    <Content Include="NhibernateConfigs\hibernateDC.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NhibernateConfigs\hibernateGERAL.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NhibernateConfigs\hibernateNW.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NhibernateConfigs\hibernatePV.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NhibernateConfigs\hibernateRDH.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="NhibernateConfigs\hibernateDC.cfg.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="NhibernateConfigs\hibernateGERAL.cfg.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="NhibernateConfigs\hibernateNW.cfg.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="NhibernateConfigs\hibernatePV.cfg.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="NhibernateConfigs\hibernateRDH.cfg.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

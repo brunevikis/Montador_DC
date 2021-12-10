@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemNW">
+
+	<class name="DGER" table="DGER">
+    <id name="id" column="Codigo" >
+      <generator class="native" />
+    </id>
+    <property name="Titulo" />
+    <property name="Valor" />
+    <many-to-one name="deckNW" class="DecompTools.ModelagemNW.DeckNW" column="ID_DECK" foreign-key="FK_DECK_DGER"  />
+
+  </class>
+</hibernate-mapping>

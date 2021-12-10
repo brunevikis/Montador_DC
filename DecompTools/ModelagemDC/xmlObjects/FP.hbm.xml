@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemDC">
+
+  <class name="FP" table="fp">
+    <!-- Parte 'comunitaria' -->
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <many-to-one name="deck" class="DecompTools.ModelagemDC.Deck" column="id_deck" foreign-key="fk_deck_ct" />
+    <property name="ordem" column="ordem" /> <!-- Linha no deck -->
+    <property name="linha" column="linha" /> <!-- Linha dentro do bloco -->
+    <!-- Parte especifica por deck -->
+    <property name="campo1" />
+    <property name="campo2" />
+    <property name="campo3" />
+    <property name="campo4" />
+    <property name="campo5" />
+    <property name="campo6" />
+    <property name="campo7" />
+    <property name="campo8" />
+    <property name="campo9" />
+    <property name="campo10" />
+    <property name="campo11" />
+    <property name="campo12" />
+    <property name="campo13" />
+<property name="campo14" />
+<property name="campo15" />
+<property name="campo16" />
+<property name="campo17" />
+<property name="campo18" />
+  </class>
+</hibernate-mapping>

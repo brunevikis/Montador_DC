@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemPrevs">
+
+  <class name="Calculados">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="dt_Entrada" column="dt_entrada" update="false" insert="false" />
+    <property name="ano" />
+    <property name="ativo" />
+    <bag name="dados" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_calculados" foreign-key="FK_CalculadosDados_Calculados" />
+      <one-to-many class="CalculadosDados" />
+    </bag>
+
+    
+    <bag name="estudo_dependentes" lazy="true" >
+      <key column="id_calculados" foreign-key="FK_Estudos_Calculados" />
+      <one-to-many class="Estudos" />
+    </bag>
+  </class>
+</hibernate-mapping>

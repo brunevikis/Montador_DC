@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="AutoPrevs"
+					namespace="AutoPrevs.Modelagem">
+
+  <class name="Estudos">
+    <!-- Parte 'comunitaria' -->
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="dt_Entrada" column="dt_entrada" update="false" insert="false" />
+    <many-to-one name="prevs_base" class="AutoPrevs.Modelagem.Prevs" column="id_prevs_base" foreign-key="FK_Estudos_Prevs"  />
+    <many-to-one name="prevs_saida" class="AutoPrevs.Modelagem.Prevs" column="id_prevs_saida" foreign-key="FK_Estudos_Prevs1"  />
+    <many-to-one name="regressao" class="AutoPrevs.Modelagem.Regressao" column="id_regressao" foreign-key="FK_Estudos_Regressao"  />
+    <many-to-one name="calculado" class="AutoPrevs.Modelagem.Calculados" column="id_calculados" foreign-key="FK_Estudos_Calculados"  />
+    <property name="rev" />
+    <property name="mes" />
+    <property name="ano" />
+  </class>
+</hibernate-mapping>

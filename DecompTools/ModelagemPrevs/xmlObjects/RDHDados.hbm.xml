@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemPrevs">
+
+  <class name="RDHDados" table="fat_rdh_hidra_hidro">
+    <composite-id name="RDHDadosIdentifier" class="RDHDadosIdentifier">
+      <key-property name="dt_rdh" column="dt_rdh" />
+      <key-property name="id_posto" column="id_posto" />
+    </composite-id>
+    <many-to-one name="rdh" class="DecompTools.ModelagemPrevs.RDH" column="dt_rdh" />
+    <property name="posto" column="id_posto" />
+    <property name="vazaoDia" column="vl_vazao_dia" />
+    <property name="earm" column="vl_earm" />
+    <property name="volEspera" column="vl_vol_espera" />
+    <property name="vazaoDefluente" column="vl_vazao_defluente" />
+    <property name="vazaoIncremental" column="vl_vazao_incremental" />
+    <property name="vazaoUltMax" column="vl_vazao_ult_max" />
+    <property name="vazaoUltMin" column="vl_vazao_ult_min" />
+  </class>
+</hibernate-mapping>

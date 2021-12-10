@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemNW">
+
+	<class name="EXPT" table="EXPT">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Codigo" />
+    <property name="Usina" />
+    <property name="Mes_Inicial" />
+    <property name="Ano_Inicial" />
+    <property name="Mes_Final" />
+    <property name="Ano_Final" />
+    <property name="TIPO" />
+    <property name="VALOR" />
+    <property name="Maq_Num" />
+    <property name="Indexado" />
+    <many-to-one name="deckNW" class="DecompTools.ModelagemNW.DeckNW" column="ID_DECK" foreign-key="FK_DECK_EXPT"  />
+
+  </class>
+</hibernate-mapping>

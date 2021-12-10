@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="AutoPrevs"
+					namespace="AutoPrevs.Modelagem">
+
+  <!--<class name="RegressaoDados" table="RegressaoDados_JAN16">-->
+    <class name="RegressaoDados" table="RegressaoDados">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <many-to-one name="regressao" class="AutoPrevs.Modelagem.Regressao" column="id_regressao" foreign-key="FK_RegressaoDados_Regressao"  />
+    <property name="postoRegredido" column="posto_regredido" />
+    <property name="postoBase" column="posto_base" />
+    <property name="a0_1" column="a0_01" />
+    <property name="a0_2" column="a0_02" />
+    <property name="a0_3" column="a0_03" />
+    <property name="a0_4" column="a0_04" />
+    <property name="a0_5" column="a0_05" />
+    <property name="a0_6" column="a0_06" />
+    <property name="a0_7" column="a0_07" />
+    <property name="a0_8" column="a0_08" />
+    <property name="a0_9" column="a0_09" />
+    <property name="a0_10" />
+    <property name="a0_11" />
+    <property name="a0_12" />
+    <property name="a1_1" column="a1_01" />
+    <property name="a1_2" column="a1_02" />
+    <property name="a1_3" column="a1_03" />
+    <property name="a1_4" column="a1_04" />
+    <property name="a1_5" column="a1_05" />
+    <property name="a1_6" column="a1_06" />
+    <property name="a1_7" column="a1_07" />
+    <property name="a1_8" column="a1_08" />
+    <property name="a1_9" column="a1_09" />
+    <property name="a1_10" />
+    <property name="a1_11" />
+    <property name="a1_12" />
+  </class>
+</hibernate-mapping>

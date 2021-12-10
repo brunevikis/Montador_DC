@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="AutoPrevs"
+					namespace="AutoPrevs.Modelagem">
+
+  <class name="PrevsDados">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <many-to-one name="prevs" class="AutoPrevs.Modelagem.Prevs" column="id_prevs" foreign-key="FK_PrevsDados_Prevs1"  />
+    <property name="posto" />
+    <property name="sem1" />
+    <property name="sem2" />
+    <property name="sem3" />
+    <property name="sem4" />
+    <property name="sem5" />
+    <property name="sem6" />
+  </class>
+</hibernate-mapping>

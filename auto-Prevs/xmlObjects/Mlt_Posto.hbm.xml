@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="AutoPrevs"
+					namespace="AutoPrevs.Modelagem">
+
+  <class name="MltPosto" table="MLT_POSTO">
+    <id name="numPosto" column="num_posto" ></id>
+    <property name="submercado" />
+    <property name="dt_atualizacao" />
+    <property name="mes1" column="mes01" />
+    <property name="mes2" column="mes02" />
+    <property name="mes3" column="mes03" />
+    <property name="mes4" column="mes04" />
+    <property name="mes5" column="mes05" />
+    <property name="mes6" column="mes06" />
+    <property name="mes7" column="mes07" />
+    <property name="mes8" column="mes08" />
+    <property name="mes9" column="mes09" />
+    <property name="mes10" column="mes10" />
+    <property name="mes11" column="mes11" />
+    <property name="mes12" column="mes12" />
+  </class>
+</hibernate-mapping>

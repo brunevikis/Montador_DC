@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemNW">
+
+  <class name="PAT_INTERCAMBIO" table="PAT_INTERCAMBIO">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Submercado" />
+    <property name="Patamar" />
+    <property name="Ano" />
+    <property name="Mes1" column="[01]" />
+    <property name="Mes2" column="[02]" />
+    <property name="Mes3" column="[03]" />
+    <property name="Mes4" column="[04]" />
+    <property name="Mes5" column="[05]" />
+    <property name="Mes6" column="[06]" />
+    <property name="Mes7" column="[07]" />
+    <property name="Mes8" column="[08]" />
+    <property name="Mes9" column="[09]" />
+    <property name="Mes10" column="[10]" />
+    <property name="Mes11" column="[11]" />
+    <property name="Mes12" column="[12]" />
+    <many-to-one name="deckNW" class="DecompTools.ModelagemNW.DeckNW" column="ID_DECK" foreign-key="FK_DECKS_PAT_INTERCAMBIO"  />
+  </class>
+</hibernate-mapping>

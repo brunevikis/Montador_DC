@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC798F90-0F53-4116-AF0A-D787B350756A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoPrevs</RootNamespace>
+    <AssemblyName>AutoPrevs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'UAT|AnyCPU' ">
+    <OutputPath>bin\Realease2\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolBox">
+      <HintPath>..\toolbox\ToolBox\bin\Debug\ToolBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\controllerCarregaPrevs.cs" />
+    <Compile Include="Controller\controllerEscrevePrevs.cs" />
+    <Compile Include="Controller\controllerNovoPrevs.cs" />
+    <Compile Include="Controller\controllerPrevivaz.cs" />
+    <Compile Include="Factory\MLTDAO.cs" />
+    <Compile Include="Factory\PostosDAO.cs" />
+    <Compile Include="Factory\RDHDAO.cs" />
+    <Compile Include="Factory\NHibernateHelperRDH.cs" />
+    <Compile Include="Factory\RegressaoDAO.cs" />
+    <Compile Include="Factory\PrevsDAO.cs" />
+    <Compile Include="Factory\NHibernateHelper.cs" />
+    <Compile Include="Factory\SemanasAnoDAO.cs" />
+    <Compile Include="Modelagem\MltPosto.cs" />
+    <Compile Include="Modelagem\Semanas_Ano.cs" />
+    <Compile Include="Modelagem\RDH.cs" />
+    <Compile Include="Modelagem\RDHDados.cs" />
+    <Compile Include="Modelagem\MltSub.cs" />
+    <Compile Include="Modelagem\Prevs.cs" />
+    <Compile Include="Modelagem\CalculadosDados.cs" />
+    <Compile Include="Modelagem\Regressao.cs" />
+    <Compile Include="Modelagem\RegressaoDados.cs" />
+    <Compile Include="Modelagem\Postos.cs" />
+    <Compile Include="Modelagem\Calculados.cs" />
+    <Compile Include="Modelagem\PrevsDados.cs" />
+    <Compile Include="Modelagem\Estudos.cs" />
+    <Compile Include="Modelagem\Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\UtilitarioDeArquivo.cs" />
+    <Compile Include="Util\UtilitarioDeData.cs" />
+    <Compile Include="Util\UtilitarioDeTexto.cs" />
+    <Compile Include="Views\FormCarregaPrevs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormCarregaPrevs.Designer.cs">
+      <DependentUpon>FormCarregaPrevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEscrevePrevs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEscrevePrevs.Designer.cs">
+      <DependentUpon>FormEscrevePrevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormNovoPrevsSensib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormNovoPrevsSensib.Designer.cs">
+      <DependentUpon>FormNovoPrevsSensib.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hibernateRDH.cfg.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="hibernatePV.cfg.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Views\FormCarregaPrevs.resx">
+      <DependentUpon>FormCarregaPrevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEscrevePrevs.resx">
+      <DependentUpon>FormEscrevePrevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormNovoPrevsSensib.resx">
+      <DependentUpon>FormNovoPrevsSensib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xmlObjects\Mlt_Posto.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\Semanas_Ano.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\RDH.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xmlObjects\RDHDados.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xmlObjects\Mlt_Sub.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\Postos.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\RegressaoDados.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xmlObjects\Regressao.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\CalculadosDados.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\Calculados.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\PrevsDados.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\Prevs.hbm.xml" />
+    <EmbeddedResource Include="xmlObjects\Estudos.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

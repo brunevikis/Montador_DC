@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="ComparadorDecksDC"
+					namespace="ComparadorDecksDC.Modelagem">
+
+	<class name="infoUsinasFict">
+		<id name="id" column="id" >
+			<generator class="native" />
+		</id>
+    <property name="idFict" column="id_fict"/>
+    <property name="idCorresp" column="id_corresp"/>
+  </class>
+</hibernate-mapping>

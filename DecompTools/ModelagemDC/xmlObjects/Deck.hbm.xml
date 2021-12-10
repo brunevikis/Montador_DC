@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemDC">
+
+	<class name="Deck" table="deck">
+		<id name="id" column="id" >
+			<generator class="native" />
+		</id>
+    <property name="dt_Entrada" column="dt_entrada" update="false" insert="false" />
+    <property name="id_deckNW" />
+    <property name="id_deckDC_base" />
+    <property name="nome" column="nome" />
+		<property name="descricao" column="descricao" />
+    <property name="caminho" not-null="true" />
+    <property name="te" />
+    <property name="oficial" />
+    <property name="rev" />
+    <property name="ano" />
+    <property name="mes" />
+    <property name="dia" />
+
+    <bag name="uh" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck" foreign-key="fk_deck_uh" />
+      <one-to-many class="UH" />
+    </bag>
+
+    <bag name="ct" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ct" />
+      <one-to-many class="CT" />
+    </bag>
+
+    <bag name="ue" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ue" />
+      <one-to-many class="UE" />
+    </bag>
+    
+    <bag name="vr" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_vr" />
+      <one-to-many class="VR" />
+    </bag>
+    
+    <bag name="dp" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_dp" />
+      <one-to-many class="DP" />
+    </bag>
+    
+    <bag name="cd" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_cd" />
+      <one-to-many class="CD" />
+    </bag>
+    
+    <bag name="pq" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_pq" />
+      <one-to-many class="PQ" />
+    </bag>
+    
+    <bag name="it" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_it" />
+      <one-to-many class="IT" />
+    </bag>
+
+    <bag name="ri" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ri" />
+      <one-to-many class="RI" />
+    </bag>
+
+    <bag name="ia" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ia" />
+      <one-to-many class="IA" />
+    </bag>
+    
+    <bag name="tx" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_tx" />
+      <one-to-many class="TX" />
+    </bag>
+    
+    <bag name="gp" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_gp" />
+      <one-to-many class="GP" />
+    </bag>
+    
+    <bag name="ni" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ni" />
+      <one-to-many class="NI" />
+    </bag>
+    
+    <bag name="mp" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_mp" />
+      <one-to-many class="MP" />
+    </bag>
+    
+    <bag name="mt" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_mt" />
+      <one-to-many class="MT" />
+    </bag>
+    
+    <bag name="fd" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_fd" />
+      <one-to-many class="FD" />
+    </bag>
+    
+    <bag name="ve" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ve" />
+      <one-to-many class="VE" />
+    </bag>
+    
+    <bag name="vi" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_vi" />
+      <one-to-many class="VI" />
+    </bag>
+    
+    <bag name="qi" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_qi" />
+      <one-to-many class="QI" />
+    </bag>
+    
+    <bag name="ac" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ac" />
+      <one-to-many class="AC" />
+    </bag>
+
+    <bag name="fp" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_fp" />
+      <one-to-many class="FP" />
+    </bag>
+    
+    <bag name="ci" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ci" />
+      <one-to-many class="CI" />
+    </bag>
+
+    <bag name="pi" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_pi" />
+      <one-to-many class="PI" />
+    </bag>
+    
+    <bag name="fc" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_fc" />
+      <one-to-many class="FC" />
+    </bag>
+       
+    <!--<bag name="ea" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ea" />
+      <one-to-many class="EA" />
+    </bag>
+    
+    <bag name="es" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_es" />
+      <one-to-many class="ES" />
+    </bag>-->
+    
+    <bag name="ti" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ti" />
+      <one-to-many class="TI" />
+    </bag>
+    
+    <bag name="rq" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_rq" />
+      <one-to-many class="RQ" />
+    </bag>
+    
+    <bag name="ez" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ez" />
+      <one-to-many class="EZ" />
+    </bag>
+
+    <bag name="rha" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_rha" />
+      <one-to-many class="RHA" />
+    </bag>
+
+    <bag name="rhe" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_rhe" />
+      <one-to-many class="RHE" />
+    </bag>
+
+    <bag name="rhq" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_rhq" />
+      <one-to-many class="RHQ" />
+    </bag>
+
+    <bag name="rhv" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_rhv" />
+      <one-to-many class="RHV" />
+    </bag>
+
+    <!--<bag name="ir" cascade="all-delete-orphan" lazy="false" >
+      <key column="id_deck"  foreign-key="fk_deck_ir" />
+      <one-to-many class="IR" />
+    </bag>-->
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="ComparadorDecksDC"
+					namespace="ComparadorDecksDC.Modelagem">
+
+  <class name="CadUsh" table="_dev_cadUsh">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="dt_Entrada" column="dt_entrada" update="false" insert="false" />
+    <property name="codUsina" />
+    <property name="nomeUsina" />
+    <property name="sistema" />
+    <property name="posto" />
+    <property name="jusante" />
+    <property name="volMax" precision="28" scale="18"/>
+    <property name="volMin" precision="28" scale="18"/>
+    <property name="cotaMax" precision="28" scale="18"/>
+    <property name="cotaMin" precision="28" scale="18"/>
+    <property name="PCV0" precision="28" scale="22" />
+    <property name="PCV1" precision="28" scale="22" />
+    <property name="PCV2" precision="28" scale="22" />
+    <property name="PCV3" precision="28" scale="22" />
+    <property name="PCV4" precision="28" scale="22" />
+    <property name="prodEsp" precision="28" scale="18"/>
+    <property name="canalFugaMed" precision="28" scale="18" />
+    <property name="perdaTipo" />
+    <property name="perdaVal" precision="28" scale="18"/>
+    <property name="numUnidBase" />
+    <property name="reg" />
+
+    <property name="numConjMaq" />
+
+    <property name="numMaqConj1" />
+    <property name="potEfConj1" />
+    <property name="qEfConj1" />
+    <property name="hEfConj1" />
+
+    <property name="numMaqConj2" />
+    <property name="potEfConj2" />
+    <property name="qEfConj2" />
+    <property name="hEfConj2" />
+
+    <property name="numMaqConj3" />
+    <property name="potEfConj3" />
+    <property name="qEfConj3" />
+    <property name="hEfConj3" />
+
+    <property name="numMaqConj4" />
+    <property name="potEfConj4" />
+    <property name="qEfConj4" />
+    <property name="hEfConj4" />
+
+    <property name="numMaqConj5" />
+    <property name="potEfConj5" />
+    <property name="qEfConj5" />
+    <property name="hEfConj5" />
+
+  </class>
+</hibernate-mapping>

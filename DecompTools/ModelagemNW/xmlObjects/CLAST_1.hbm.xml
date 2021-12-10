@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemNW">
+
+	<class name="CLAST_1" table="CLAST_1">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Numero" />
+    <property name="Usina" />
+    <property name="Combustivel" />
+    <property name="Custo_1" />
+    <property name="Custo_2" />
+    <property name="Custo_3" />
+    <property name="Custo_4" />
+    <property name="Custo_5" />
+    <many-to-one name="deckNW" class="DecompTools.ModelagemNW.DeckNW" column="ID_DECK" foreign-key="FK_DECK_CLAST_1"  />
+
+  </class>
+</hibernate-mapping>

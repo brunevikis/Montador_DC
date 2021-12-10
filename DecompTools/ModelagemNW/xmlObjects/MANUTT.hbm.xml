@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+					assembly="DecompTools"
+					namespace="DecompTools.ModelagemNW">
+
+	<class name="MANUTT" table="MANUTT">
+    <id name="id" column="id" >
+      <generator class="native" />
+    </id>
+    <property name="Empresa" />
+    <property name="Codigo" />
+    <property name="Usina" />
+    <property name="Unidade" />
+    <property name="Inicio" />
+    <property name="Duracao" />
+    <property name="Potencia" />
+    <many-to-one name="deckNW" class="DecompTools.ModelagemNW.DeckNW" column="ID_DECK" foreign-key="FK_DECK_MANUTT"  />
+
+  </class>
+</hibernate-mapping>
