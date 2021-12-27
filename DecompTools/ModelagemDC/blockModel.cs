@@ -42,6 +42,12 @@ namespace DecompTools.ModelagemDC
                 block.SetValue(this, linha.Substring(0, 2));
                 definePos();
             }
+            if (linha.Substring(0,2) == "HE" || linha.Substring(0,2) == "CM")
+            {
+                PropertyInfo block = this.GetType().GetProperty("bloco");
+                block.SetValue(this, linha.Substring(0, 2));
+                definePos();
+            }
 
             string[] guarda = new string[pos.Length];
 

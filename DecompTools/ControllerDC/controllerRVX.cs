@@ -97,7 +97,7 @@ namespace DecompTools.ControllerDC {
             VI.atualizarRVX(deck);
             //QI.atualizarRVX(deck);
             //ES.atualizarRVX(deck);
-
+            HE.atualizarRVX(deck);
             Restricoes.atualizarRVX(deck, "RHE");
 
             Restricoes.atualizarRVX(deck, "RHA");

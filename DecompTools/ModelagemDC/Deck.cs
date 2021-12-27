@@ -60,6 +60,8 @@ namespace DecompTools.ModelagemDC {
         public virtual IList<TI> ti { get; set; }
         public virtual IList<RQ> rq { get; set; }
         public virtual IList<EZ> ez { get; set; }
+        public virtual IList<HE> he { get; set; }
+        public virtual IList<CM> cm { get; set; }
 
         //RESTRIÇÔES
         public virtual IList<RHA> rha { get; set; }
@@ -72,7 +74,7 @@ namespace DecompTools.ModelagemDC {
 
         public Deck() {
             //blocos = new string[] { "UH", "CT", "CI", "UE", "VR", "DP", "CD", "PQ", "IT", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ" };
-            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ","HE","CM" };
+            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ","HE" };
         }
 
 
@@ -96,6 +98,7 @@ namespace DecompTools.ModelagemDC {
             string[] vRHV = { "HV", "CV", "LV" };
             string[] vRHQ = { "HQ", "CQ", "LQ" };
             string[] vRHE = { "FI", "FT", "LU", "FU", "RE", "FE" };
+            string[] vRHECM = { "HE", "CM" };
 
             string blocoAtual;
 
@@ -107,6 +110,8 @@ namespace DecompTools.ModelagemDC {
                 blocoAtual = "RHQ";
             else if (vRHV.Contains(s))
                 blocoAtual = "RHV";
+            else if (vRHECM.Contains(s))
+                blocoAtual = "HE";
             else
                 blocoAtual = s;
 
@@ -152,6 +157,7 @@ namespace DecompTools.ModelagemDC {
 
                     PropertyInfo block = this.GetType().GetProperty(blocoAtual.ToLower());
                     block.SetValue(this, blockList, null);
+                    
                 }
                 
             }
@@ -308,7 +314,12 @@ namespace DecompTools.ModelagemDC {
                 arquivo.WriteLine("& REPRES. AGREGACAO                 => 0001");
                 arquivo.WriteLine("& AJUSTE PARP A TODAS UHES          => 0001");
                 arquivo.WriteLine("& UTILIZA INFORMACAO DE ENOS        => 0000");
-               
+                arquivo.WriteLine("& ESTUDO PROSPECTIVO DECOMP         => 0000 prospec.dat");
+                arquivo.WriteLine("& IMPRIME PREVS                     => 0001 prevs12.rv0");
+                arquivo.WriteLine("& IMPRIME VAZPAST                   => 0000 vazpast2.dat");
+                arquivo.WriteLine("& TENDENCIA HIDROLOGICA P/ VAZPAST  => 0000");
+                arquivo.WriteLine("& MODELO PAR-A                      => 0000");
+
 
 
                 arquivo.Flush();
