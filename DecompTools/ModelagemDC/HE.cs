@@ -90,7 +90,7 @@ namespace DecompTools.ModelagemDC
                     if (deck.he[x].campo4 == "1")
                     {
                         deck.he.Remove(deck.he[x]);//remove a linha HE 
-                        deck.he.Remove(deck.he[x]);// remove a linha CM
+                        //deck.he.Remove(deck.he[x]);// remove as linhas CM quando eram decks com uma linha CM pra cada linha HE
                         x--;
                     }
                     else
