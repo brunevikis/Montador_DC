@@ -99,6 +99,7 @@ namespace DecompTools.ModelagemDC {
             string[] vRHQ = { "HQ", "CQ", "LQ" };
             string[] vRHE = { "FI", "FT", "LU", "FU", "RE", "FE" };
             string[] vRHECM = { "HE", "CM" };
+            string[] vRVLVU = { "VL", "VU" };
 
             string blocoAtual;
 
@@ -112,6 +113,8 @@ namespace DecompTools.ModelagemDC {
                 blocoAtual = "RHV";
             else if (vRHECM.Contains(s))
                 blocoAtual = "HE";
+            else if (vRVLVU.Contains(s))
+                blocoAtual = "VL";
             else
                 blocoAtual = s;
 

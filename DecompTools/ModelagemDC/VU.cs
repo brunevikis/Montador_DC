@@ -18,7 +18,8 @@ namespace DecompTools.ModelagemDC
 
         public VU()
         {
-            pos = new int[] { 4, 6, 8};
+           // pos = new int[] { 4, 6, 8};
+            pos = new int[] { 5, 6, 4};
             nome = "VU";
         }
     }
