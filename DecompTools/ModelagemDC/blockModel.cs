@@ -48,7 +48,7 @@ namespace DecompTools.ModelagemDC
                 block.SetValue(this, linha.Substring(0, 2));
                 definePos();
             }
-            if (linha.Substring(0, 2) == "VL" || linha.Substring(0, 2) == "VU")
+            if (linha.Substring(0, 2) == "VL" || linha.Substring(0, 2) == "VU" || linha.Substring(0, 2) == "VA")
             {
                 PropertyInfo block = this.GetType().GetProperty("bloco");
                 block.SetValue(this, linha.Substring(0, 2));

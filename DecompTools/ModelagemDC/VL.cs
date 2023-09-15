@@ -23,14 +23,23 @@ namespace DecompTools.ModelagemDC
                 switch (this.bloco)
                 {
                     case "VL":
-                        pos = new int[] { 5, 5, 26, 16, 16, 16, 16 };
+                        //pos = new int[] { 5, 5, 26, 16, 16, 16, 16 };
+                        pos = new int[] { 6, 17, 16, 16, 16, 16, 16 };
                         nome = "VL";
                         break;
 
                     case "VU":
-                        pos = new int[] { 5, 6, 4 };
+                        //pos = new int[] { 5, 6, 4 };
+                        pos = new int[] { 6, 6, 16 };//tirou 1 casa para ficar igual deck modelo
                         nome = "VU";
                         break;
+
+                    case "VA":
+                        //pos = new int[] { 5, 6, 4 };
+                        pos = new int[] { 6, 6, 16 };//tirou 1 casa para ficar igual deck modelo
+                        nome = "VA";
+                        break;
+
                 }
         }
 

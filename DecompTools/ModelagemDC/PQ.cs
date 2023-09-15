@@ -24,7 +24,7 @@ namespace DecompTools.ModelagemDC {
         }
 
         public PQ() {
-            pos = new int[] { 10, 4, 5, 8, 5, 5 };
+            pos = new int[] { 12, 2, 5, 8, 5, 5 };
             nome = "PQ";
         }
 
@@ -328,20 +328,36 @@ namespace DecompTools.ModelagemDC {
 
         public static void atualizarRVX(Deck deck) {
             PQ pq1 = null;
+            int sub = 0;//
             for (int x = 0; x < (deck.pq.Count()); x++) {
-                if (deck.pq[x].campo3 == "1") {
-                    //deck.pq.Remove(deck.pq[x]);
-                    //x--;
+                if (deck.pq[x].campo3 == "1" && /*apagar*/sub != int.Parse(deck.pq[x].campo2)/*apagar*/)
+                {
+                    //deck.pq.Remove(deck.pq[x]);//nao
+                    //x--;//nao
                     pq1 = deck.pq[x];
                     continue;
-                } else if (deck.pq[x].campo3 == "2" && pq1 != null) {
+                } 
+                else if (deck.pq[x].campo3 == "2" && pq1 != null) 
+                {
                     deck.pq.Remove(pq1);
                     x--;
+                }
+                else if (deck.pq[x].campo3 == "1" && sub == int.Parse(deck.pq[x].campo2))//apagar todo o else if
+                {
+                    pq1 = deck.pq[x];
+                    deck.pq.Remove(pq1);
+                    x--;
+                    pq1 = null;
+                    continue;
                 }
                 pq1 = null;
 
                 if (deck.pq[x].campo3 != "1")
+                {
+                    sub = int.Parse(deck.pq[x].campo2);//apagar
                     deck.pq[x].campo3 = (int.Parse(deck.pq[x].campo3) - 1).ToString();
+
+                }
             }
         }
 

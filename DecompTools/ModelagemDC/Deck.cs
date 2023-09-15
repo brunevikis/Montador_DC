@@ -9,8 +9,10 @@ using System.Linq;
 
 using DecompTools.FactoryDC;
 
-namespace DecompTools.ModelagemDC {
-    public class Deck : Model {
+namespace DecompTools.ModelagemDC
+{
+    public class Deck : Model
+    {
         public virtual int id { get; set; }
         public virtual int id_deckNW { get; set; }
         public virtual int id_deckDC_base { get; set; }
@@ -72,9 +74,10 @@ namespace DecompTools.ModelagemDC {
 
         public virtual string[] blocos { get; set; }
 
-        public Deck() {
+        public Deck()
+        {
             //blocos = new string[] { "UH", "CT", "CI", "UE", "VR", "DP", "CD", "PQ", "IT", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ" };
-            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ","HE" };
+            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ", "HE" };
         }
 
 
@@ -84,7 +87,8 @@ namespace DecompTools.ModelagemDC {
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static IList GetList(Type type) {
+        public static IList GetList(Type type)
+        {
             return (IList)Activator.CreateInstance(typeof(List<>).MakeGenericType(type));
         }
 
@@ -93,13 +97,14 @@ namespace DecompTools.ModelagemDC {
         /// </summary>
         /// <param name="s"></param>
         /// <returns></returns>
-        public virtual string escolheBloco(string s) {
+        public virtual string escolheBloco(string s)
+        {
             string[] vRHA = { "HA", "CA", "LA" };
             string[] vRHV = { "HV", "CV", "LV" };
             string[] vRHQ = { "HQ", "CQ", "LQ" };
             string[] vRHE = { "FI", "FT", "LU", "FU", "RE", "FE" };
             string[] vRHECM = { "HE", "CM" };
-            string[] vRVLVU = { "VL", "VU" };
+            string[] vRVLVU = { "VL", "VU", "VA" };
 
             string blocoAtual;
 
@@ -127,11 +132,13 @@ namespace DecompTools.ModelagemDC {
         /// <param name="list"></param>
         /// <param name="blocoAtual"></param>
         /// <param name="numLinha"></param>
-        public virtual void add(ArrayList list, String blocoAtual, int numLinha) {
+        public virtual void add(ArrayList list, String blocoAtual, int numLinha)
+        {
             int numBloco = 1;
             IList blockList;
 
-            if (blocoAtual != "") {
+            if (blocoAtual != "")
+            {
                 Type t = Type.GetType("DecompTools.ModelagemDC." + blocoAtual);
                 if (t != null)
                 {
@@ -160,9 +167,9 @@ namespace DecompTools.ModelagemDC {
 
                     PropertyInfo block = this.GetType().GetProperty(blocoAtual.ToLower());
                     block.SetValue(this, blockList, null);
-                    
+
                 }
-                
+
             }
         }
 
@@ -170,9 +177,12 @@ namespace DecompTools.ModelagemDC {
         /// Copiar todos os blocos do deckBase.
         /// </summary>
         /// <param name="deckBase"></param>
-        public virtual void clone(Deck deckBase) {
-            foreach (string b in blocos) {
-                if (!String.Equals(b, "DT") && !String.Equals(b, "IR")) {
+        public virtual void clone(Deck deckBase)
+        {
+            foreach (string b in blocos)
+            {
+                if (!String.Equals(b, "DT") && !String.Equals(b, "IR"))
+                {
                     this.clone(deckBase, b);
                 }
             }
@@ -183,13 +193,14 @@ namespace DecompTools.ModelagemDC {
         /// </summary>
         /// <param name="deckBase"></param>
         /// <param name="b"></param>
-        public virtual void clone(Deck deckBase, string b) {
+        public virtual void clone(Deck deckBase, string b)
+        {
             IList blockListBase;
             IList blockListNew;
             blockModel linhaBloco;
 
             Type t = Type.GetType("DecompTools.ModelagemDC." + b);
-            if (t!=null)
+            if (t != null)
             {
                 blockListNew = GetList(t);
 
@@ -212,14 +223,15 @@ namespace DecompTools.ModelagemDC {
                     block.SetValue(this, blockListNew, null);
                 }
             }
-            
+
         }
 
         /// <summary>
         /// Exporta o deck para um arquivo no local pre-definido
         /// </summary>
         /// <param name="caminho"></param>
-        public virtual void escreveDeck(string caminho, string nomeArquivo = null, string nomeMensal = null) {
+        public virtual void escreveDeck(string caminho, string nomeArquivo = null, string nomeMensal = null)
+        {
             IList blockList;
             if (nomeArquivo == null)
                 caminho = Path.Combine(caminho, String.Concat("DADGER.RV", this.rev.ToString()));
@@ -229,7 +241,8 @@ namespace DecompTools.ModelagemDC {
             if (File.Exists(caminho))
                 File.Delete(caminho);
             File.Create(caminho).Close();
-            using (TextWriter arquivo = File.CreateText(caminho)) {
+            using (TextWriter arquivo = File.CreateText(caminho))
+            {
 
                 arquivo.WriteLine(this.te);
                 arquivo.WriteLine("SB   1   SE");
@@ -238,8 +251,10 @@ namespace DecompTools.ModelagemDC {
                 arquivo.WriteLine("SB   4   N ");
                 arquivo.WriteLine("SB  11   FC");
 
-                foreach (string b in blocos) {
-                    if (String.Equals(b, "DT")) {
+                foreach (string b in blocos)
+                {
+                    if (String.Equals(b, "DT"))
+                    {
                         StringBuilder sb = new StringBuilder("DT  ");
                         sb.Append(UtilitarioDeTexto.zeroEsq(this.dia, 2));
                         sb.Append("   ");
@@ -248,7 +263,9 @@ namespace DecompTools.ModelagemDC {
                         sb.Append(UtilitarioDeTexto.zeroEsq(this.ano, 2));
 
                         arquivo.WriteLine(sb);
-                    } else if (String.Equals(b, "IR")) {
+                    }
+                    else if (String.Equals(b, "IR"))
+                    {
                         arquivo.WriteLine("IR  GRAFICO");
                         arquivo.WriteLine("IR  CUSTOS ");
                         arquivo.WriteLine("IR  AVALIA ");
@@ -256,7 +273,9 @@ namespace DecompTools.ModelagemDC {
                         arquivo.WriteLine("IR  ACOPLA    01");
                         arquivo.WriteLine("IR  ARQFPHA");
                         arquivo.WriteLine("IR  ARQCSV ");
-                    } else {
+                    }
+                    else
+                    {
                         Type t = Type.GetType("DecompTools.ModelagemDC." + b);
                         if (t != null)
                         {
@@ -275,7 +294,7 @@ namespace DecompTools.ModelagemDC {
                                 }
                             }
                         }
-                        
+
                     }
                     arquivo.Flush();
                 }
