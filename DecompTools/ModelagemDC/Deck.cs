@@ -340,7 +340,7 @@ namespace DecompTools.ModelagemDC
                 arquivo.WriteLine("& IMPRIME PREVS                     => 0001 prevs12.rv0");
                 arquivo.WriteLine("& IMPRIME VAZPAST                   => 0000 vazpast2.dat");
                 arquivo.WriteLine("& TENDENCIA HIDROLOGICA P/ VAZPAST  => 0000");
-                arquivo.WriteLine("& MODELO PAR-A                      => 0000");
+                arquivo.WriteLine("& MODELO PAR-A                      => 0001");
 
 
 
