@@ -23,7 +23,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
     <PublisherName>Compass</PublisherName>
-    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationRevision>39</ApplicationRevision>
     <ApplicationVersion>1.2.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -156,6 +156,7 @@
     <Compile Include="ModelagemDC\CD.cs" />
     <Compile Include="ModelagemDC\CI.cs" />
     <Compile Include="ModelagemDC\CM.cs" />
+    <Compile Include="ModelagemDC\CX.cs" />
     <Compile Include="ModelagemDC\FJ.cs" />
     <Compile Include="ModelagemDC\FP.cs" />
     <Compile Include="ModelagemDC\CT.cs" />

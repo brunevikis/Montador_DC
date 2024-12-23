@@ -55,6 +55,7 @@ namespace DecompTools.ModelagemDC
         public virtual IList<PI> pi { get; set; }
         public virtual IList<FP> fp { get; set; }
         //public virtual IList<IR> ir { get; set; }
+        public virtual IList<CX> cx { get; set; }
         public virtual IList<CI> ci { get; set; }
         public virtual IList<FC> fc { get; set; }
         //public virtual IList<EA> ea { get; set; }
@@ -77,7 +78,7 @@ namespace DecompTools.ModelagemDC
         public Deck()
         {
             //blocos = new string[] { "UH", "CT", "CI", "UE", "VR", "DP", "CD", "PQ", "IT", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ" };
-            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ", "HE" };
+            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "CX", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ", "HE" };
         }
 
 
