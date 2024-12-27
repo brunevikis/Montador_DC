@@ -7,31 +7,48 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace DecompTools.ModelagemDC {
-    public class UH : blockModel {
+namespace DecompTools.ModelagemDC
+{
+    public class UH : blockModel
+    {
         public virtual string campo1 { get; set; }
         public virtual string campo2 { get; set; }
         public virtual string campo3 { get; set; }
         public virtual string campo4 { get; set; }
         public virtual string campo5 { get; set; }
+        public virtual string campo6 { get; set; }
+        public virtual string campo7 { get; set; }
 
-        public UH() {
-            pos = new int[] { 5, 4, 13, 16, 29};
+        public UH()
+        {
+            pos = new int[] { 5, 4, 13, 16, 29, 1, 3 };
             nome = "UH";
         }
 
-        public override string escreveLinha() {
+        public override string escreveLinha()
+        {
             StringBuilder linha = new StringBuilder();
             linha.Append(nome);
 
-            for (int i = 1; i <= pos.Length; i++) {
+            for (int i = 1; i <= pos.Length; i++)
+            {
                 PropertyInfo block = this.GetType().GetProperty(String.Concat("campo", i.ToString()));
 
                 if (block.GetValue(this, null) == null)
                     break;
 
                 if (i == 3)
-                    linha = linha.Append(UtilitarioDeTexto.preencheEspacos(UtilitarioDeTexto.zeroDir(double.Parse(campo3.Replace(".", ",")), 2), pos[i - 1]));
+                {
+                    if (campo3.Trim() != "")
+                    {
+                        linha = linha.Append(UtilitarioDeTexto.preencheEspacos(UtilitarioDeTexto.zeroDir(double.Parse(campo3.Replace(".", ",")), 2), pos[i - 1]));
+                    }
+                    else
+                    {
+                        linha = linha.Append(UtilitarioDeTexto.preencheEspacos((string)block.GetValue(this, null), pos[i - 1]));
+                    }
+
+                }
                 else
                     linha = linha.Append(UtilitarioDeTexto.preencheEspacos((string)block.GetValue(this, null), pos[i - 1]));
             }
@@ -48,7 +65,8 @@ namespace DecompTools.ModelagemDC {
         /// <param name="dataInicial"></param>
         /// <param name="tipo">1 = MLT, 2 = base</param>
         /// <returns></returns>
-        public static IList<UH> atualizarMensal(Deck deckBase, decimal[,] reservSplit, int p, DateTime dataInicial, int tipo) {
+        public static IList<UH> atualizarMensal(Deck deckBase, decimal[,] reservSplit, int p, DateTime dataInicial, int tipo)
+        {
             decimal[] subTotal = new decimal[4];
 
             int i = 0;
@@ -59,17 +77,21 @@ namespace DecompTools.ModelagemDC {
             decimal[] target = new decimal[4] { reservSplit[0, indiceMes] / 100, reservSplit[1, indiceMes] / 100, reservSplit[2, indiceMes] / 100, reservSplit[3, indiceMes] / 100 };
 
 
-            if (tipo == 1) {
+            if (tipo == 1)
+            {
                 //preserv base order;
                 var uhMlt = MltPostoDAO.getUhListByMonth(dataInicial.Month);
                 var newUh = new List<UH>();
 
-                foreach (var uh in deckBase.uh) {
+                foreach (var uh in deckBase.uh)
+                {
                     var mlt = uhMlt.FirstOrDefault(u => u.campo1 == uh.campo1);
 
-                    if (mlt != null) {
+                    if (mlt != null)
+                    {
                         newUh.Add(mlt);
-                    } else
+                    }
+                    else
                         newUh.Add(uh);
                 }
 

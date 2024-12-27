@@ -56,6 +56,8 @@ namespace DecompTools.ModelagemDC
         public virtual IList<FP> fp { get; set; }
         //public virtual IList<IR> ir { get; set; }
         public virtual IList<CX> cx { get; set; }
+        public virtual IList<FJ> fj { get; set; }
+        public virtual IList<FA> fa { get; set; }
         public virtual IList<CI> ci { get; set; }
         public virtual IList<FC> fc { get; set; }
         //public virtual IList<EA> ea { get; set; }
@@ -78,7 +80,7 @@ namespace DecompTools.ModelagemDC
         public Deck()
         {
             //blocos = new string[] { "UH", "CT", "CI", "UE", "VR", "DP", "CD", "PQ", "IT", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "FC", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ" };
-            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "CX", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ", "HE" };
+            blocos = new string[] { "UH", "CT", "UE", "VR", "DP", "CD", "PQ", "RI", "VL", "VU", "IA", "TX", "GP", "NI", "DT", "MP", "MT", "FD", "VE", "RHE", "VI", "QI", "AC", "PI", "FP", "IR", "CI", "FC", "CX", "TI", "RQ", "EZ", "RHA", "RHV", "RHQ", "HE", "FJ", "FA" };
         }
 
 
@@ -312,7 +314,8 @@ namespace DecompTools.ModelagemDC
                 arquivo.WriteLine("& ---------------------  EVAPORAÇÃO LINEAR -------------------------------");
                 arquivo.WriteLine("&x  x    xxx");
                 arquivo.WriteLine("EV  1    INI ");
-                arquivo.WriteLine("FJ  polinjus.dat ");
+                //FA  indices.csv arquivo.WriteLine("FJ  polinjus.dat ");
+                //arquivo.WriteLine("FA  indices.csv ");
                 arquivo.WriteLine("& --------------------------------------------------------------------------------------------");
                 arquivo.WriteLine("&   DADOS PARA O PROGRAMA CONFIGURADOR DO ARQUIVO DE CENARIOS DE VAZOES:");
                 arquivo.WriteLine("&   -  IDENTIFICADOR \"& VAZOES\" NO INICIO DO REGISTROS;");
