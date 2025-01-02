@@ -327,38 +327,66 @@ namespace DecompTools.ModelagemDC {
         }
 
         public static void atualizarRVX(Deck deck) {
-            PQ pq1 = null;
-            int sub = 0;//
-            for (int x = 0; x < (deck.pq.Count()); x++) {
-                if (deck.pq[x].campo3 == "1" && /*apagar*/sub != int.Parse(deck.pq[x].campo2)/*apagar*/)
-                {
-                    //deck.pq.Remove(deck.pq[x]);//nao
-                    //x--;//nao
-                    pq1 = deck.pq[x];
-                    continue;
-                } 
-                else if (deck.pq[x].campo3 == "2" && pq1 != null) 
-                {
-                    deck.pq.Remove(pq1);
-                    x--;
-                }
-                else if (deck.pq[x].campo3 == "1" && sub == int.Parse(deck.pq[x].campo2))//apagar todo o else if
-                {
-                    pq1 = deck.pq[x];
-                    deck.pq.Remove(pq1);
-                    x--;
-                    pq1 = null;
-                    continue;
-                }
-                pq1 = null;
 
-                if (deck.pq[x].campo3 != "1")
-                {
-                    sub = int.Parse(deck.pq[x].campo2);//apagar
-                    deck.pq[x].campo3 = (int.Parse(deck.pq[x].campo3) - 1).ToString();
+            #region novo codigo
 
+            for (int s = 1; s <= 4; s++)
+            {
+                List<string> tipoUsinas = new List<string>();
+                var pqsUsinas = deck.pq.Where(x => x.campo2.Trim() == s.ToString()).Select(x => x.campo1).Distinct().ToList();
+                foreach (var pqU in pqsUsinas)
+                {
+                    var pqs = deck.pq.Where(x => x.campo1.Trim() == pqU.Trim() && x.campo2.Trim() == s.ToString()).ToList();
+                    if (pqs.Count() > 2)//remove o primeiro estagio pra diminuir o numero dos estagios e renumera os estagios restantes 
+                    {
+                        foreach (var pq in pqs)
+                        {
+                            pq.campo3 = (int.Parse(pq.campo3) - 1).ToString();
+                        }
+                        deck.pq.Remove(pqs.First());
+                    }
+                    else if (pqs.Count() == 2)//somente renumera o ultimo estagio pois tem que premanecer no minimo 2 estagios (primeiro mes e segundo mes )
+                    {
+                        var pq = pqs.Last();
+                        pq.campo3 = (int.Parse(pq.campo3) - 1).ToString();
+                    }
                 }
             }
+
+            #endregion
+
+            //PQ pq1 = null;
+            //int sub = 0;//
+            //for (int x = 0; x < (deck.pq.Count()); x++) {
+            //    if (deck.pq[x].campo3 == "1" && /*apagar*/sub != int.Parse(deck.pq[x].campo2)/*apagar*/)
+            //    {
+            //        //deck.pq.Remove(deck.pq[x]);//nao
+            //        //x--;//nao
+            //        pq1 = deck.pq[x];
+            //        continue;
+            //    } 
+            //    else if (deck.pq[x].campo3 == "2" && pq1 != null) 
+            //    {
+            //        deck.pq.Remove(pq1);
+            //        x--;
+            //    }
+            //    else if (deck.pq[x].campo3 == "1" && sub == int.Parse(deck.pq[x].campo2))//apagar todo o else if
+            //    {
+            //        pq1 = deck.pq[x];
+            //        deck.pq.Remove(pq1);
+            //        x--;
+            //        pq1 = null;
+            //        continue;
+            //    }
+            //    pq1 = null;
+
+            //    if (deck.pq[x].campo3 != "1")
+            //    {
+            //        sub = int.Parse(deck.pq[x].campo2);//apagar
+            //        deck.pq[x].campo3 = (int.Parse(deck.pq[x].campo3) - 1).ToString();
+
+            //    }
+            //}
         }
 
         public static new IOrderedEnumerable<Tuple<int, blockModel>> tupleOrderBy(List<Tuple<int, blockModel>> tupleList, int difRev) {
