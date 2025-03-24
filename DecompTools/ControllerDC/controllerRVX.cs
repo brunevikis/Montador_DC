@@ -38,7 +38,7 @@ namespace DecompTools.ControllerDC {
                     "\nvazoes.rv" + deckBase.rev.ToString() +
                     "\nhidr.dat" +
                     "\nmlt.dat" +
-                    "\nloss.dat" +
+                    "\nperdas.dat" +
                     "\ndadgnl.rv" + deckBase.rev.ToString() +
                     "\n./\n\n");
 
