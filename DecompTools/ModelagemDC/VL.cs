@@ -30,13 +30,13 @@ namespace DecompTools.ModelagemDC
 
                     case "VU":
                         //pos = new int[] { 5, 6, 4 };
-                        pos = new int[] { 6, 6, 16 };//tirou 1 casa para ficar igual deck modelo
+                        pos = new int[] { 6, 6, 17 };//tinha diminuido uma casa , mas agora aumentou e esta igual no manual
                         nome = "VU";
                         break;
 
                     case "VA":
                         //pos = new int[] { 5, 6, 4 };
-                        pos = new int[] { 6, 6, 16 };//tirou 1 casa para ficar igual deck modelo
+                        pos = new int[] { 6, 6, 17 };//tinha diminuido uma casa , mas agora aumentou e esta igual no manual
                         nome = "VA";
                         break;
 
