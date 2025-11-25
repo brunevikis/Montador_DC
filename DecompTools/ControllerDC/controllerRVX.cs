@@ -2,11 +2,14 @@
 using DecompTools.ModelagemDC;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DecompTools.ControllerDC {
-    class controllerRVX {
+namespace DecompTools.ControllerDC
+{
+    class controllerRVX
+    {
         private Boolean ac = false;
 
         /// <summary>
@@ -15,7 +18,8 @@ namespace DecompTools.ControllerDC {
         /// <param name="idDeckBase">Deck inicial</param>
         /// <param name="caminho">Caminho de saida para os decks seguintes</param>
         /// <returns>true caso as rev. foram geradas com sucesso, false caso contrario</returns>
-        public bool RVX(Deck deckBase, String caminho) {
+        public bool RVX(Deck deckBase, String caminho)
+        {
 
             Semanas s;
 
@@ -26,8 +30,11 @@ namespace DecompTools.ControllerDC {
 
             var numSemanas = s.semanas - (s.diasMes2 != 0 ? 1 : 0);
 
-
-            do {
+            string rootFolder = System.IO.Path.GetDirectoryName(deckBase.caminho);
+            string renovaveisFile = System.IO.Directory.GetFiles(rootFolder).Where(x => System.IO.Path.GetFileName(x).ToLower().Contains("renovaveis")).FirstOrDefault();
+            int iteracao = 0;
+            do
+            {
 
                 var folder = System.IO.Path.Combine(caminho, "RV" + deckBase.rev.ToString());
                 if (!System.IO.Directory.Exists(folder)) System.IO.Directory.CreateDirectory(folder);
@@ -58,7 +65,8 @@ namespace DecompTools.ControllerDC {
 
                 DateTime semanaInicial = s.primeiraSemana;
 
-                for (int x = 0; x < deckNew.rev; x++) {
+                for (int x = 0; x < deckNew.rev; x++)
+                {
                     semanaInicial = semanaInicial.AddDays(7);
                 }
 
@@ -67,7 +75,11 @@ namespace DecompTools.ControllerDC {
                 deckNew.ano = semanaInicial.Year;
 
                 atualizarRVX(deckNew, s);
-
+                if (System.IO.File.Exists(renovaveisFile))
+                {
+                    atualizarRenovaveis(folder, renovaveisFile, iteracao);
+                    iteracao++;
+                }
                 deckBase = deckNew;
 
             } while (deckBase.rev + 1 <= numSemanas);
@@ -75,12 +87,74 @@ namespace DecompTools.ControllerDC {
             return true;
         }
 
+        public void atualizarRenovaveis(string saveFolder, string renovaveis, int redutor)
+        {
+            string filename = Path.GetFileName(renovaveis);
+            List<string> newArq = new List<string>();
+
+            var renolines = File.ReadAllLines(renovaveis).ToList();
+
+            if (redutor > 0)
+            {
+                foreach (var line in renolines)
+                {
+                    var lineSplit = line.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                    if (line.Trim().StartsWith("&") || line.Trim().StartsWith("PEE-CAD") || line.Trim().StartsWith("PEE-SUBM"))
+                    {
+                        newArq.Add(line);
+                    }
+                    else if (line.Trim().StartsWith("PEE-CONFIG-PER"))
+                    {
+                        int estagio = Convert.ToInt32(lineSplit[3]) - redutor;
+                        lineSplit[3] = estagio.ToString();
+                        newArq.Add(string.Join(";", lineSplit.ToArray()));
+                    }
+                    else if (line.Trim().StartsWith("PEE-POT-INST-PER"))
+                    {
+                        int estagio = Convert.ToInt32(lineSplit[3]) - redutor;
+                        lineSplit[3] = estagio.ToString();
+                        newArq.Add(string.Join(";", lineSplit.ToArray()));
+                    }
+                    else if (line.Trim().StartsWith("PEE-GER-PER-PAT-CEN"))
+                    {
+                        int estagioIni = Convert.ToInt32(lineSplit[2]);
+                        int estagioFin = Convert.ToInt32(lineSplit[3]);
+                        if (estagioIni<= redutor)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            lineSplit[2] = (estagioIni - redutor).ToString();
+                            lineSplit[3] = (estagioFin - redutor).ToString();
+                            newArq.Add(string.Join(";", lineSplit.ToArray()));
+
+                        }
+
+                        //continuar aqui C:\Files\Implementacoes\renovaveis DECOMP\testeRaio\DEC_ONS_092025_RV0_VE_renovaveis
+                    }
+                    else
+                    {
+                        newArq.Add(line);
+                    }
+                }
+                File.WriteAllLines(Path.Combine(saveFolder, filename), newArq);
+            }
+            else
+            {
+                System.IO.File.Copy(renovaveis, System.IO.Path.Combine(saveFolder, filename), true);
+            }
+
+        }
+
         /// <summary>
         /// Faz o papel de atualizar bloco a bloco, inicialmente os blocos sem inteligencia e depois os "blocos inteligentes"
         /// </summary>
         /// <param name="deck">Deck a ser atualizado</param>
         /// <param name="s">Semana atual</param>
-        public void atualizarRVX(Deck deck, Semanas s) {
+        public void atualizarRVX(Deck deck, Semanas s)
+        {
             MP.atualizarRVX(deck, s);
             MT.atualizarRVX(deck, s);
             FD.atualizarRVX(deck, s);
@@ -89,7 +163,7 @@ namespace DecompTools.ControllerDC {
             RQ.atualizarRVX(deck, s);
             DP.atualizarRVX(deck);
             PQ.atualizarRVX(deck);
-           // IT.atualizarRVX(deck);
+            // IT.atualizarRVX(deck);
             RI.atualizarRVX(deck);
             VL.atualizarRVX(deck);
             IA.atualizarRVX(deck);
