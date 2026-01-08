@@ -276,6 +276,7 @@ namespace DecompTools.ModelagemDC
                         arquivo.WriteLine("IR  ACOPLA    01");
                         arquivo.WriteLine("IR  ARQFPHA");
                         arquivo.WriteLine("IR  ARQCSV ");
+                        arquivo.WriteLine("IR  ARQLIBS");
                     }
                     else
                     {
