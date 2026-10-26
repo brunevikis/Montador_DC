@@ -32,7 +32,9 @@ namespace DecompTools.ControllerDC
 
             string rootFolder = System.IO.Path.GetDirectoryName(deckBase.caminho);
             string renovaveisFile = System.IO.Directory.GetFiles(rootFolder).Where(x => System.IO.Path.GetFileName(x).ToLower().Contains("renovaveis")).FirstOrDefault();
+            string restEleEsp = System.IO.Directory.GetFiles(rootFolder).Where(x => System.IO.Path.GetFileName(x).ToLower().Contains("lib_restricao-eletrica-especial.csv")).FirstOrDefault();
             int iteracao = 0;
+            int iteracaoELE = 0;
             do
             {
 
@@ -80,6 +82,11 @@ namespace DecompTools.ControllerDC
                     atualizarRenovaveis(folder, renovaveisFile, iteracao);
                     iteracao++;
                 }
+                if (System.IO.File.Exists(restEleEsp))
+                {
+                    atualizarRestEleEsp(folder, restEleEsp, iteracaoELE);
+                    iteracaoELE++;
+                }
                 deckBase = deckNew;
 
             } while (deckBase.rev + 1 <= numSemanas);
@@ -116,11 +123,12 @@ namespace DecompTools.ControllerDC
                         lineSplit[3] = estagio.ToString();
                         newArq.Add(string.Join(";", lineSplit.ToArray()));
                     }
-                    else if (line.Trim().StartsWith("PEE-GER-PER-PAT-CEN"))
+                    //else if (line.Trim().StartsWith("PEE-GER-PER-PAT-CEN"))
+                    else if (line.Trim().StartsWith("PEE-GER-PER-PAT-CEN") || line.Trim().StartsWith("PEE-GER-PER-PAT"))
                     {
                         int estagioIni = Convert.ToInt32(lineSplit[2]);
                         int estagioFin = Convert.ToInt32(lineSplit[3]);
-                        if (estagioIni<= redutor)
+                        if (estagioIni <= redutor)
                         {
                             continue;
                         }
@@ -144,6 +152,122 @@ namespace DecompTools.ControllerDC
             else
             {
                 System.IO.File.Copy(renovaveis, System.IO.Path.Combine(saveFolder, filename), true);
+            }
+
+        }
+
+        public void atualizarRestEleEsp(string saveFolder, string restEle, int redutor)
+        {
+            string filename = Path.GetFileName(restEle);
+            List<string> newArq = new List<string>();
+
+            var restlines = File.ReadAllLines(restEle).ToList();
+
+            if (redutor > 0)
+            {
+                foreach (var line in restlines)
+                {
+                    var lineSplit = line.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+
+                    if (line.Trim().StartsWith("&") /*|| line.Trim().StartsWith("ALIAS-ELETRICO")*/ || line.Trim().StartsWith("EXPRESSAO-ELETRICA") || line.Trim().StartsWith("RESTRICAO-ELETRICA-FORMULA"))
+                    {
+                        newArq.Add(line);
+                    }
+                    else if (line.Trim().StartsWith("RESTRICAO-ELETRICA-HORIZONTE-PERIODO"))
+                    {
+                        int estagioIni = Convert.ToInt32(lineSplit[2]);
+                        int estagioFin = Convert.ToInt32(lineSplit[3]);
+                        if (estagioIni == estagioFin && estagioFin == 1)
+                        {
+                            newArq.Add(string.Join(";", lineSplit.ToArray()));
+                        }
+                        else
+                        {
+                            int fim = (estagioFin - redutor) < 1 ? 1 : (estagioFin - redutor);
+                            lineSplit[3] = fim.ToString();
+
+                            newArq.Add(string.Join(";", lineSplit.ToArray()));
+                        }
+                        ///
+                        //int estagio = Convert.ToInt32(lineSplit[3]) - redutor;
+                        //lineSplit[3] = estagio.ToString();
+                        //newArq.Add(string.Join(";", lineSplit.ToArray()));
+                    }
+                    else if (line.Trim().StartsWith("RESTRICAO-ELETRICA-LIMITES-FORMULA-PERIODO-PATAMAR") || line.Trim().StartsWith("RESTRICAO-ELETRICA-INEQUACAO-PERIODO-PATAMAR"))
+                    {
+
+                        int estagioIni = Convert.ToInt32(lineSplit[2]);
+                        int estagioFin = Convert.ToInt32(lineSplit[3]);
+                        if (estagioIni == 1)
+                        {
+                            if (estagioFin == 1)
+                            {
+                                newArq.Add(string.Join(";", lineSplit.ToArray()));
+                            }
+                            else
+                            {
+                                int fim = estagioFin - redutor;
+                                if (fim < 1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    lineSplit[3] = fim.ToString();
+                                    newArq.Add(string.Join(";", lineSplit.ToArray()));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            int inicio = estagioIni - redutor;
+                            int fim = estagioFin - redutor;
+                            if (inicio < 1 || fim < 1)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                lineSplit[2] = inicio.ToString();
+                                lineSplit[3] = fim.ToString();
+                                newArq.Add(string.Join(";", lineSplit.ToArray()));
+                            }
+                            
+                        }
+                        //
+                        //int estagio = Convert.ToInt32(lineSplit[3]) - redutor;
+                        //lineSplit[3] = estagio.ToString();
+                        //newArq.Add(string.Join(";", lineSplit.ToArray()));
+                    }
+                    //else if (line.Trim().StartsWith("PEE-GER-PER-PAT-CEN"))
+                    else if (line.Trim().StartsWith("ALIAS-ELETRICO-VALOR-PERIODO-PATAMAR"))
+                    {
+                        int estagioIni = Convert.ToInt32(lineSplit[2]);
+                        int estagioFin = Convert.ToInt32(lineSplit[3]);
+                        if (estagioIni <= redutor)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            lineSplit[2] = (estagioIni - redutor).ToString();
+                            lineSplit[3] = (estagioFin - redutor).ToString();
+                            newArq.Add(string.Join(";", lineSplit.ToArray()));
+
+                        }
+
+                        //continuar aqui C:\Files\Implementacoes\renovaveis DECOMP\testeRaio\DEC_ONS_092025_RV0_VE_renovaveis
+                    }
+                    else
+                    {
+                        newArq.Add(line);//registro ALIAS-ELETRICO entra aqui para evitar confronto com o registro ALIAS-ELETRICO-VALOR-PERIODO-PATAMAR
+                    }
+                }
+                File.WriteAllLines(Path.Combine(saveFolder, filename), newArq);
+            }
+            else
+            {
+                System.IO.File.Copy(restEle, System.IO.Path.Combine(saveFolder, filename), true);
             }
 
         }
